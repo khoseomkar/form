@@ -1,0 +1,116 @@
+<html>
+<head>
+    <meta charset="uft-8">
+    <title>Stile Zone registeration form</title>
+    <script>
+        function validation()
+{
+    var First_name=document.getElementById("firstname").value;
+    var Last_name=document.getElementById("lastname").value;
+    var Email_id=document.getElementById("email").value;
+    var Age=document.getElementById("age").value;
+    var Username=document.getElementById("EntreUsername").value;
+    var Password=document.getElementById("EntrePassword").value;
+    console.log(First_name)
+    function letters(str) {
+      return str.length === 1 && str.match(/[0-9]/i);
+    }
+    function validateEmail(email) {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+  }
+    if(letters(First_name))
+    {alert("SHOULD BE A CHARACTER");
+      console.log(!letters(First_name))}
+
+    else if(letters(Last_name))
+    {alert("SHOULD BE A CHARACTER")}
+
+    else if (!validateEmail(Email_id))
+	{alert('Invalid email')}
+
+    else
+    {alert("registeration successful")}
+}
+    </script>
+    <style>
+        body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url(cart.jpg);
+    background-size: cover;
+}
+.Register{
+    width: 300px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:rgb(8, 0, 0);
+    text-align: center;
+}
+.Register h1
+{
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.Register input[type="text"],.Register input[type="password"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #0367f0;
+    padding: 14px 10px ;
+    width: 220px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25px;
+}
+.Register input[type="text"]:focus,.Register input[type="password"]:focus
+{
+    width: 270px;
+    border-color: darkgoldenrod;
+}
+.Register input[type="button"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #17f003;
+    padding: 14px 35px ;
+    outline: none;
+    color: #17f003;
+    border-radius: 24px;
+    transition: 0.25px;
+    cursor: pointer;
+}
+.Register input[type="button"]:hover
+{
+    background-color:rgb(0, 0, 0);
+    border-color: darkgoldenrod;
+    color: darkgoldenrod;
+}
+    </style>
+
+</head>
+<body>
+<form class="Register">
+<h1>Register</h1>
+<input type="text" required="required" size="15" placeholder="First_name" id="firstname" maxlength="30" /> 
+<input type="text" required="required" size="15" placeholder="Last_name" id="lastname" maxlength="30" /> 
+<input type="text" required="required" size="15" placeholder="Email_id" id="email" maxlength="30" /> 
+<input type="text" required="required" size="15" placeholder="Age" id="age" maxlength="2" /> 
+<input type="text" required="required" size="15" placeholder="set a username" id="EntreUsername" maxlength="30" /> 
+<input type="password" required="required" size="15"placeholder="set a password" id="EntrePassword" maxlength="30">
+<input type="button" onclick="validation()" size="15" value="signup">
+</form>
+</body>
+</html>
